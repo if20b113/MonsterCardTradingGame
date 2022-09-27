@@ -6,10 +6,10 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterCardTradingGame.InterfaceTest
+namespace MonsterCardTradingGame.Model
 {
 
-    interface ICard
+    public interface ICard
     {
 
         enum ElementType

@@ -4,18 +4,22 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
+using static MonsterCardTradingGame.Model.ICard;
 
-namespace MonsterCardTradingGame.InterfaceTest
+namespace MonsterCardTradingGame.Model
 {
-    class SpellCard : ICard
+
+
+
+    public class MonsterCard : ICard
     {
+       
         
         string name = "";
 
-        ICard.ElementType Etype;
+       ICard.ElementType Etype;
 
-        public SpellCard(string cardname)
+        public MonsterCard(string cardname)
         {
             const int damage = 0;
 

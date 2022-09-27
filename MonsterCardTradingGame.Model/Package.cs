@@ -1,13 +1,13 @@
-﻿using MonsterCardTradingGame.InterfaceTest;
+﻿using MonsterCardTradingGame.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterCardTradingGame
+namespace MonsterCardTradingGame.Model
 {
-    class Package
+    public class Package
     {
 
         public List<ICard> PackageCards = new List<ICard>();

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterCardTradingGame
+namespace MonsterCardTradingGame.DAL
 {
-    class Server
+    public class Server
     {
     }
 }

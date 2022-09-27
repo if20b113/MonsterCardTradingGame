@@ -5,9 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterCardTradingGame
+namespace MonsterCardTradingGame.Model
 {
-    class User
+    public class User
     {
         protected string username = "";
         protected string password = "";

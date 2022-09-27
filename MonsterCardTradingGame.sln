@@ -3,7 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterCardTradingGame", "MonsterCardTradingGame\MonsterCardTradingGame.csproj", "{F4483E42-432A-4AEC-A418-F3D0DC03DB1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonsterCardTradingGame", "MonsterCardTradingGame\MonsterCardTradingGame.csproj", "{F4483E42-432A-4AEC-A418-F3D0DC03DB1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2514921A-0EFC-44B6-8A5F-F295A6BD2B0D} = {2514921A-0EFC-44B6-8A5F-F295A6BD2B0D}
+		{85E59BF3-0EA5-440F-9C50-48FA00855F32} = {85E59BF3-0EA5-440F-9C50-48FA00855F32}
+		{EC8E8BEA-C767-4C54-9712-D7BBA5342924} = {EC8E8BEA-C767-4C54-9712-D7BBA5342924}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonsterCardTradingGame.BL", "MonsterCardTradingGame.BL\MonsterCardTradingGame.BL.csproj", "{EC8E8BEA-C767-4C54-9712-D7BBA5342924}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2514921A-0EFC-44B6-8A5F-F295A6BD2B0D} = {2514921A-0EFC-44B6-8A5F-F295A6BD2B0D}
+		{85E59BF3-0EA5-440F-9C50-48FA00855F32} = {85E59BF3-0EA5-440F-9C50-48FA00855F32}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonsterCardTradingGame.DAL", "MonsterCardTradingGame.DAL\MonsterCardTradingGame.DAL.csproj", "{2514921A-0EFC-44B6-8A5F-F295A6BD2B0D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonsterCardTradingGame.Model", "MonsterCardTradingGame.Model\MonsterCardTradingGame.Model.csproj", "{85E59BF3-0EA5-440F-9C50-48FA00855F32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +30,18 @@ Global
 		{F4483E42-432A-4AEC-A418-F3D0DC03DB1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4483E42-432A-4AEC-A418-F3D0DC03DB1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4483E42-432A-4AEC-A418-F3D0DC03DB1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8E8BEA-C767-4C54-9712-D7BBA5342924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8E8BEA-C767-4C54-9712-D7BBA5342924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC8E8BEA-C767-4C54-9712-D7BBA5342924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC8E8BEA-C767-4C54-9712-D7BBA5342924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2514921A-0EFC-44B6-8A5F-F295A6BD2B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2514921A-0EFC-44B6-8A5F-F295A6BD2B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2514921A-0EFC-44B6-8A5F-F295A6BD2B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2514921A-0EFC-44B6-8A5F-F295A6BD2B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85E59BF3-0EA5-440F-9C50-48FA00855F32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E59BF3-0EA5-440F-9C50-48FA00855F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E59BF3-0EA5-440F-9C50-48FA00855F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E59BF3-0EA5-440F-9C50-48FA00855F32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
