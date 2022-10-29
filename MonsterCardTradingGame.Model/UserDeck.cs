@@ -10,12 +10,12 @@ namespace MonsterCardTradingGame.Model
 {
     public class UserDeck
     {
-        public List<ICard> Deckcards = new List<ICard>();
+        public List<AbstractCard> Deckcards = new List<AbstractCard>();
 
-        public UserDeck()
+        public UserDeck(AbstractCard Card1)
         {
-            Deckcards.Add(new MonsterCard(""));
-            Deckcards.Add(new SpellCard(""));
+            Deckcards.Add(Card1);
+           // Deckcards.Add(new SpellCard(""));
 
         }
 

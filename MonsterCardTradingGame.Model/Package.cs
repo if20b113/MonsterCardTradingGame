@@ -10,13 +10,11 @@ namespace MonsterCardTradingGame.Model
     public class Package
     {
 
-        public List<ICard> PackageCards = new List<ICard>();
+        public List<AbstractCard> PackageCards = new List<AbstractCard>();
 
-        public Package()
+        public Package(AbstractCard Card1)
         {
-            PackageCards.Add(new MonsterCard(""));
-            PackageCards.Add(new SpellCard(""));
-
+            PackageCards.Add(Card1);
         }
 
 

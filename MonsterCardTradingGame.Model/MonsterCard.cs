@@ -11,19 +11,15 @@ namespace MonsterCardTradingGame.Model
 
 
 
-    public class MonsterCard : ICard
+    public class MonsterCard : AbstractCard
     {
-       
-        
-        string name = "";
 
-       ICard.ElementType Etype;
-
-        public MonsterCard(string cardname)
+        public MonsterCard(string name, int damage, int type) : base(name, damage,type)
         {
-            const int damage = 0;
 
-            name = cardname;
+
+
         }
+
     }
 }

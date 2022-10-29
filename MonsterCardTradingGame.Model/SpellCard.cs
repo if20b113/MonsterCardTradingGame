@@ -9,18 +9,11 @@ using static MonsterCardTradingGame.Model.ICard;
 
 namespace MonsterCardTradingGame.Model
 {
-    public class SpellCard : ICard
+    public class SpellCard : AbstractCard
     {
-        
-        string name = "";
-
-        ICard.ElementType Etype;
-
-        public SpellCard(string cardname)
+        public SpellCard(string name, int damage ,int type) : base(name, damage, type)
         {
-            const int damage = 0;
 
-            name = cardname;
         }
     }
 }

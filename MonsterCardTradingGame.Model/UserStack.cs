@@ -9,12 +9,12 @@ namespace MonsterCardTradingGame.Model
     public class UserStack : ITrading
     {
 
-        public List<ICard> Stackcards = new List<ICard>();
+        //public List<ICard> Stackcards = new List<ICard>();
 
         public UserStack()
         {
-            Stackcards.Add(new MonsterCard(""));
-            Stackcards.Add(new SpellCard(""));
+            //Stackcards.Add(new MonsterCard(""));
+           // Stackcards.Add(new SpellCard(""));
 
         }
 

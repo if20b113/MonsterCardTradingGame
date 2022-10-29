@@ -17,10 +17,14 @@ namespace MonsterCardTradingGame.Model
             fire,water,normal
         }
 
-        void DoDamage()
-        {
-            
 
+        ElementType EType { get; }
+        string name { get; }
+        int damage { get; }
+
+       public int DoDamage()
+        {
+            return 0;
         }
 
     }
