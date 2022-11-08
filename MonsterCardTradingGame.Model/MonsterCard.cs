@@ -1,25 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using static MonsterCardTradingGame.Model.ICard;
-
-namespace MonsterCardTradingGame.Model
+﻿namespace MonsterCardTradingGame.Model
 {
 
-
-
-    public class MonsterCard : AbstractCard
+    public class MonsterCard : ICard, IMonster
     {
 
-        public MonsterCard(string name, int damage, int type) : base(name, damage,type)
+        public DamageType DamageType { get; set; }
+
+        public MonsterType MonsterType { get; set; }
+
+        public decimal damage { get; set; }
+
+       public MonsterCard(DamageType damageType, MonsterType monsterType, decimal Damage)
         {
-
-
-
+            DamageType = damageType;
+            MonsterType = monsterType;
+            damage = Damage;
         }
+
+
+
+
 
     }
 }

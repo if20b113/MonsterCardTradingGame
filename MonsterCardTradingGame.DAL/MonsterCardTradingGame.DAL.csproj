@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MonsterCardTradingGame.Model\MonsterCardTradingGame.Model.csproj" />
+  </ItemGroup>
+
 </Project>

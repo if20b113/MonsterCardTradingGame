@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace MonsterCardTradingGame.Model
 {
-    public interface ITrading
+    public interface ISpell
     {
-
-
-
 
     }
 }

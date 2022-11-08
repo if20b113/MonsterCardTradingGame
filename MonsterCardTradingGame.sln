@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonsterCardTradingGame.DAL"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonsterCardTradingGame.Model", "MonsterCardTradingGame.Model\MonsterCardTradingGame.Model.csproj", "{85E59BF3-0EA5-440F-9C50-48FA00855F32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterCardTradingGame.test", "MonsterCardTradingGame.test\MonsterCardTradingGame.test.csproj", "{241DA248-80FD-41E2-831D-443EE1F7356B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonsterCardTradingGame.test", "MonsterCardTradingGame.test\MonsterCardTradingGame.test.csproj", "{241DA248-80FD-41E2-831D-443EE1F7356B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

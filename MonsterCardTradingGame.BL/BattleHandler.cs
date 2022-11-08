@@ -1,47 +1,58 @@
-﻿using MonsterCardTradingGame.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Security.Cryptography.X509Certificates;
+using MonsterCardTradingGame.Model;
 
 namespace MonsterCardTradingGame.BL
 {
     public class BattleHandler
     {
-        AbstractCard Card1;
-        AbstractCard Card2;
 
-        public BattleHandler()
+        IUser Player1;
+        IUser Player2;
+        int roundtimer = 100;
+        IUser? winner;
+        IUser? loser;
+
+        public BattleHandler(IUser Player1, IUser Player2)
         {
-
-            
+            this.Player1 = Player1;
+            this.Player2 = Player2;
 
         }
 
 
-        public int Battle(AbstractCard CardPlayer1, AbstractCard CardPlayer2)
+        public void StartBattle()
         {
+            for(int i = 0; i < roundtimer; i++)
+            {
+                var cardPlayer1 = Player1.GetRandomCard();
+                var cardPlayer2 = Player2.GetRandomCard();  
+                var DamageCard1 = cardPlayer1.CalculateDamage(cardPlayer2);
+                var DamageCard2 = cardPlayer2.CalculateDamage(cardPlayer1);
 
-            Card1 = CardPlayer1;
-            Card2 = CardPlayer2;
+              if(DamageCard1 > DamageCard2)
+                {
+                    Player1.AddToDeck(cardPlayer2);
+                    Player2.RemoveCardFromDeck(cardPlayer2);
+                }
 
+              else if(DamageCard2 > DamageCard1)
+               {
+                    Player2.AddToDeck(cardPlayer1);
+                    Player1.RemoveCardFromDeck(cardPlayer1);
+                }
 
-            return 0;
+              if(Player1.CardCount == 0)
+                {
+                    winner = Player2;
+                    loser = Player1;
+                }
 
-
-        }
-
-        public void BattleRules(AbstractCard CardPlayer1, AbstractCard CardPlayer2)
-        {
-
-            switch(CardPlayer1.EType){
-
-
+                if (Player2.CardCount == 0)
+                {
+                    winner = Player1;
+                    loser = Player2;
+                }
             }
-
-
-
         }
 
 

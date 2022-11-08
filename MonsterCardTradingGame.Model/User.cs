@@ -1,26 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MonsterCardTradingGame.Model
+﻿namespace MonsterCardTradingGame.Model
 {
-    public class User
+    public class User : IUser
     {
-        protected string username = "";
-        protected string password = "";
-        protected int coins = 20;
+        public string Username { get; }
+        public string Password { get; }
 
-        UserStack uStack = new UserStack();
-        UserDeck uDeck = new UserDeck();
+        private readonly List<ICard> UserDeck;
+        public int CardCount => UserDeck.Count;
+        public ICard LastCard { get; private set; } = null!;
+        public Dictionary<string, object>? BattleResult { get; set; }
+        private readonly Random randomNumber;
 
 
+        public User(string username,string password, List<ICard> deck)
+        {
+            Username = username;
+            Password = password;
+            this.UserDeck = deck;
+            randomNumber = new Random();
+        }
+
+        public User(string username, string password)
+        {
+            Username = username;
+            Password = password;
+            UserDeck = new List<ICard>();
+            randomNumber = new Random();
+        }
+
+        public void AddDeck(List<ICard> cards)
+        {
+            UserDeck.AddRange(cards);
+        }
+
+        public void AddToDeck(ICard CardtoAdd)
+        {
+            UserDeck.Add(CardtoAdd);
+        }
+
+        public void RemoveCardFromDeck(ICard CardtoRemove)
+        {
+            UserDeck.Remove(CardtoRemove);
+        }
 
 
+        public ICard GetRandomCard()
+        {
+            var index = randomNumber.Next(UserDeck.Count);
+            LastCard = UserDeck[index];
+            return LastCard;
+        }
 
-      
-       
+
     }
 }

@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterCardTradingGame.DAL
+namespace MonsterCardTradingGame.Model
 {
-    public class Server
+    public interface IMonster
     {
+
+       public MonsterType MonsterType { get; set; }   
+
     }
 }

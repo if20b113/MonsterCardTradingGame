@@ -1,31 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MonsterCardTradingGame.Model
+﻿namespace MonsterCardTradingGame.Model
 {
-
     public interface ICard
     {
 
-        enum ElementType
+        public DamageType DamageType { get; set; }
+        decimal damage { get; set; }
+        decimal CalculateDamage(ICard OtherCard)
         {
-            fire,water,normal
+
+            var BaseDamage = damage;
+            var Damage = new Damage();
+
+
+            if (this is ISpell || OtherCard is ISpell)
+            {
+                BaseDamage = Damage.HandleDamageTriangle(DamageType, OtherCard.DamageType, BaseDamage);
+            }
+
+            return BaseDamage;
         }
 
 
-        ElementType EType { get; }
-        string name { get; }
-        int damage { get; }
 
-       public int DoDamage()
-        {
-            return 0;
-        }
+
 
     }
 }
