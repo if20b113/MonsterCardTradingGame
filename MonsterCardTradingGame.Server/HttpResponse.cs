@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterCardTradingGame.DAL
+namespace MonsterCardTradingGame.Server
 {
-    internal class HttpResponse
+    public class HttpResponse
     {
         private StreamWriter writer;
         public int ResponseCode { get; set; }
@@ -29,7 +28,4 @@ namespace MonsterCardTradingGame.DAL
             writer.Close();
         }
     }
-
-
-
 }

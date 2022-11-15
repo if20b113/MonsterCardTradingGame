@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonsterCardTradingGame.DAL
+namespace MonsterCardTradingGame.Server
 {
-    internal class HttpRequest
+    public class HttpRequest
     {
         private StreamReader reader;
 
