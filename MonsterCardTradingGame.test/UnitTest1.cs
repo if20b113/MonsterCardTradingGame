@@ -9,7 +9,7 @@ namespace MonsterCardTradingGame.test
         {
         }
 
-        [TestCase(10, 5, 1)]
+       /* [TestCase(10, 5, 1)]
         [TestCase(5, 6, 2)]
         [TestCase(-1, 2, 2)]
         [TestCase(1, 3, 2)]
@@ -25,6 +25,6 @@ namespace MonsterCardTradingGame.test
             Assert.That(result, Is.EqualTo(winner));
 
             // Assert.Pass();
-        }
+        }*/
     }
 }

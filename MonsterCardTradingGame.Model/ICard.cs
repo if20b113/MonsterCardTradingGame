@@ -11,7 +11,6 @@
             var BaseDamage = damage;
             var Damage = new Damage();
 
-
             if (this is ISpell || OtherCard is ISpell)
             {
                 BaseDamage = Damage.HandleDamageTriangle(DamageType, OtherCard.DamageType, BaseDamage);
@@ -19,10 +18,5 @@
 
             return BaseDamage;
         }
-
-
-
-
-
     }
 }

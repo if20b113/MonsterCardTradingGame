@@ -11,6 +11,7 @@
     <ProjectReference Include="..\MonsterCardTradingGame.BL\MonsterCardTradingGame.BL.csproj" />
     <ProjectReference Include="..\MonsterCardTradingGame.DAL\MonsterCardTradingGame.DAL.csproj" />
     <ProjectReference Include="..\MonsterCardTradingGame.Model\MonsterCardTradingGame.Model.csproj" />
+    <ProjectReference Include="..\MonsterCardTradingGame.Server\MonsterCardTradingGame.Server.csproj" />
   </ItemGroup>
 
 </Project>

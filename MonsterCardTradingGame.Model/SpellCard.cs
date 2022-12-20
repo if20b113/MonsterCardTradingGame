@@ -14,7 +14,7 @@
             this.damage = damage;
         }
 
-        public string ToString()
+        public string DamageToString()
         {
             return $"{DamageType.ToString()} Spell";
         }

@@ -16,10 +16,5 @@
             MonsterType = monsterType;
             damage = Damage;
         }
-
-
-
-
-
     }
 }

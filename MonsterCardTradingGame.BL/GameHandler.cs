@@ -10,7 +10,7 @@ namespace MonsterCardTradingGame.BL
         private bool listening;
         private readonly Dictionary<string, Task> tasks;
         private Thread autoStart;
-        private readonly ConcurrentQueue<IUser> playerQueue;
+        private readonly ConcurrentQueue<IUser>? playerQueue;
 
         public GameHandler()
         {
@@ -26,12 +26,12 @@ namespace MonsterCardTradingGame.BL
 
             while (listening)
             {
-                if(playerQueue.Count >= 2)
+                if(playerQueue?.Count >= 2)
                 {
                     IUser? Player1 = null;
                     IUser? Player2 = null;
 
-                    if(Player1.Username == Player2.Username)
+                    if(Player1?.Username == Player2?.Username)
                     {
 
 

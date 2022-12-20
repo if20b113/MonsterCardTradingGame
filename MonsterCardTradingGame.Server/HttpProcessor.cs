@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MonsterCardTradingGame.Server
@@ -9,9 +12,11 @@ namespace MonsterCardTradingGame.Server
     public class HttpProcessor
     {
         private TcpClient clientSocket;
+        private HttpServer httpServer;
 
-        public HttpProcessor(TcpClient clientSocket)
+        public HttpProcessor(HttpServer httpServer, TcpClient clientSocket)
         {
+            this.httpServer = httpServer;
             this.clientSocket = clientSocket;
         }
 
@@ -20,14 +25,23 @@ namespace MonsterCardTradingGame.Server
             var reader = new StreamReader(clientSocket.GetStream());
             var request = new HttpRequest(reader);
             request.Parse();
-
-            Thread.Sleep(10000);
-
             var writer = new StreamWriter(clientSocket.GetStream()) { AutoFlush = true };
             var response = new HttpResponse(writer);
-            response.ResponseCode = 200;
-            response.ResponseText = "OK";
-            response.ResponseContent = "<html><body>Hello World!</body></html>";
+
+            IHttpEndpoint endpoint;
+            httpServer.Endpoints.TryGetValue(request.Path, out endpoint);
+            if (endpoint != null)
+            {
+                endpoint.HandleRequest(request, response);
+            }
+            else
+            {
+                //Thread.Sleep(10000);
+                response.ResponseCode = 404;
+                response.ResponseText = "Not Found";
+                response.Content = "<html><body>Not found!</body></html>";
+                response.Headers.Add("Content-Type", "text/html"); // application/json
+            }
             response.Process();
         }
     }
