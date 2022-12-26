@@ -22,7 +22,7 @@ namespace MonsterCardTradingGame.DAL
             this.dbname = dbname;
         }
 
-        private NpgsqlConnection Connect()
+        public NpgsqlConnection Connect()
         {
             var connstring = $"Server={host};Port=5432;User Id={username};Password={password};Database={dbname};";
 

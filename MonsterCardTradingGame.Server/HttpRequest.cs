@@ -60,7 +60,7 @@ namespace MonsterCardTradingGame.Server
                 if (line.Length == 0)
                     break;
 
-                var headerParts = line.Split(': ');
+                var headerParts = line.Split(": ");
                 headers[headerParts[0]] = headerParts[1];
                 if (headerParts[0] == "Content-Length")
                     contentLength = int.Parse(headerParts[1]);

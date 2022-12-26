@@ -15,9 +15,9 @@ namespace MonsterCardTradingGame.DAL
 
         public void Regsiteruser(User newUser)
         {
-           // DBConnector.Connect();
+            // DBConnector.Connect();
 
-
+            //var connection_ = DBConnector.connect();
 
 
         }
