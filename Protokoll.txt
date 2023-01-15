@@ -1,0 +1,49 @@
+Design:
+
+Beim Design und entwickeln des MCTG habe ich mich an das Curl-Skript sowie die Swagger Dokumentation gehalten. Am Curl Skript selbst habe ich keine änderungen vorgenommen.
+
+Unit-Testing: 
+
+In den 20 Unit-Tests werden die Battelogik sowie die erstellung von Karten durch den CardPrinter getestet.
+
+Aufbau:
+
+Das Programm nach der Layered Arichtecture Strukturiert. Es glieder sich in Models, EndPointController, Datenbank Schemas, die allgemeinen ServerKlassen (HTTP-Klassen, ConnectionHandler, 
+EndPointAttribut für Routen, BattleHandler).
+Hinzu kommt das Projekt für die Unit-Tests (in der gleichen Solution angelegt)
+
+Workflow:
+
+Einstiegspunk in Program.cs -> Hier werden die Routen für die Endpoints regestiert und dann der Server gestartet. Danach nimmt dieser Anfragen entgegen und leitet diese an den Endpunkt weiter.
+
+GitHub-Link:
+
+https://github.com/if20b113/MonsterCardTradingGame
+
+ZeitMessung:
+
+1.11-8.11 2 Stunden pro Tag
+
+15.11 3 Stunden Pro Tag
+
+27.12-30.12 3 Stunden pro Tag
+
+11.01-14.01 3 Stunden pro Tag 
+
+15.01 10 Stunden
+
+
+Lessons-Learned:
+
+.NET 6.0 + C# Features erarbeitet
+Auffrischung der Kenntnisse bezüglich Repository-Pattern, Reflections, Data-Serialization (System.Text.Json, HTTP-Parsing), Threads, Datenbank Modellierung
+Testen mit Postman
+Curl-Anwendung
+Umgang mit Visual Studio 2022 (neue Autovervollständigungsfeatures etc.)
+Programmieren mit Sockets in C#, Unit-Tests mit NUnit und ADO .NET mit Postgresql (npgsql)
+
+Derzeitiger Stand 15.01:
+
+Es gibt einen Fehler beim speichern von Daten in der Datenbank dieser tritt willkürlich auf und scheint nur die erstellung von Karten zu betreffen.
+
+Der Fehler sorgt dafür das manche Karten die angelegt werden keinen User zuordnet sind. 
