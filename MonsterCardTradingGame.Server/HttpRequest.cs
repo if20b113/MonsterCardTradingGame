@@ -18,7 +18,7 @@ namespace MonsterCardTradingGame.Server
         public string ProtocolVersion { get; private set; }
 
         public Dictionary<string, string> headers = new();
-
+        public String SpecialEndpoint { get; set; }
         public string Content { get; private set; }
 
         public HttpRequest(StreamReader reader)
@@ -31,7 +31,7 @@ namespace MonsterCardTradingGame.Server
             // first line contains HTTP METHOD PATH and PROTOCOL
             string line = reader.ReadLine();
             Console.WriteLine(line);
-            var firstLineParts = line.Split(' ');
+            var firstLineParts = line.Split(" ");
             Method = (HttpMethod)Enum.Parse(typeof(HttpMethod), firstLineParts[0]);
             var path = firstLineParts[1];
             var pathParts = path.Split('?');
@@ -39,6 +39,7 @@ namespace MonsterCardTradingGame.Server
             {
                 // we have query parameters after the ?-char
                 var queryParams = pathParts[1].Split('&');
+                Console.WriteLine(pathParts[1]);
                 foreach (string queryParam in queryParams)
                 {
                     var queryParamParts = queryParam.Split('=');
@@ -48,7 +49,10 @@ namespace MonsterCardTradingGame.Server
                         QueryParams.Add(queryParamParts[0], null);
                 }
             }
-            Path = pathParts[0];
+
+            var temp = pathParts[0].Split('%');
+
+            Path = temp[0];
 
             ProtocolVersion = firstLineParts[2];
 
@@ -60,7 +64,7 @@ namespace MonsterCardTradingGame.Server
                 if (line.Length == 0)
                     break;
 
-                var headerParts = line.Split(": ");
+                var headerParts = line.Split(":");
                 headers[headerParts[0]] = headerParts[1];
                 if (headerParts[0] == "Content-Length")
                     contentLength = int.Parse(headerParts[1]);
@@ -89,7 +93,6 @@ namespace MonsterCardTradingGame.Server
                     catch (IOException) { break; }
                 }
                 Content = data.ToString();
-                Console.WriteLine(Content);
             }
         }
     }

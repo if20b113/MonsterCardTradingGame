@@ -2,30 +2,26 @@
 {
     public class User : IUser
     {
-        public string Username { get; }
-        public string Password { get; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         private readonly List<ICard> UserDeck;
         public int CardCount => UserDeck.Count;
         public ICard LastCard { get; private set; } = null!;
-        public Dictionary<string, object>? BattleResult { get; set; }
+        public int Coins { get; set; }
+
+        public BatteLog PlayerBattleLog { get; set; }
+
         private readonly Random randomNumber;
 
 
-        public User(string username,string password, List<ICard> deck)
+        public User(string username,string password)
         {
             Username = username;
             Password = password;
-            this.UserDeck = deck;
             randomNumber = new Random();
-        }
-
-        public User(string username, string password)
-        {
-            Username = username;
-            Password = password;
             UserDeck = new List<ICard>();
-            randomNumber = new Random();
+            PlayerBattleLog = new BatteLog();
         }
 
         public void AddDeck(List<ICard> cards)

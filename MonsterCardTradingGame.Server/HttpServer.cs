@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -16,7 +17,7 @@ namespace MonsterCardTradingGame.Server
 
         private TcpListener httpListener;
 
-        public Dictionary<string, IHttpEndpoint> Endpoints { get; private set; } = new Dictionary<string, IHttpEndpoint>();
+        public Dictionary<string, IHttpEndpoint> Endpoints { get; private set; } = new ();
 
         public HttpServer(IPAddress adr, int port)
         {

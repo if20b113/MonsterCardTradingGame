@@ -45,7 +45,7 @@ namespace MonsterCardTradingGame.Model
 
             if(Type1 == DamageType.Water)
             {
-                if(Type2 == DamageType.Fire)
+                if (Type2 == DamageType.Fire)
                 {
                     BaseDamage = DamageMultiply(2, BaseDamage);
 
@@ -54,9 +54,7 @@ namespace MonsterCardTradingGame.Model
                 {
                     BaseDamage = DamageDivide(2, BaseDamage);
                 }
-
             }
-
             else if (Type1 == DamageType.Fire)
             {
                 if (Type2 == DamageType.Normal)

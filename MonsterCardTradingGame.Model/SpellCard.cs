@@ -7,19 +7,26 @@
 
         public decimal damage { get; set; }
 
+        public string Cardname { get; set; }
+
+        public Specialties SpecialityCheck { get; set; }
+
 
         public SpellCard(DamageType damageType, decimal damage)
         {
             DamageType = damageType;
             this.damage = damage;
+
+            if (damageType == DamageType.Normal)
+            {
+                Cardname =  "RegularSpell";
+            }
+            else
+            {
+               Cardname = damageType.ToString() + "Spell";
+            }
+           
+            SpecialityCheck = new();
         }
-
-        public string DamageToString()
-        {
-            return $"{DamageType.ToString()} Spell";
-        }
-
-
-
     }
 }

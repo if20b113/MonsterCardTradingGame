@@ -24,7 +24,7 @@ namespace MonsterCardTradingGame.Model
             return name;    
         }
 
-        public static DamageType? GetType(string type)
+        public static DamageType? GetDamageType(string type)
         {
             if (Enum.TryParse(type, out DamageType enumType)) return enumType;
             return null;

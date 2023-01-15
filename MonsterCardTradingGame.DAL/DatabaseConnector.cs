@@ -6,15 +6,15 @@ namespace MonsterCardTradingGame.DAL
 {
     public class DatabaseConnector
     {
-        string host { get; set; }
+        public string host { get; set; }
 
-        string username { get; set; }
+        public string username { get; set; }
 
-        string password { get; set; }
+        public string password { get; set; }
 
-        string dbname { get; set; }
+        public string dbname { get; set; }
 
-        DatabaseConnector(string host, string username, string password, string dbname)
+        public DatabaseConnector(string host, string username, string password, string dbname)
         {
             this.host = host;
             this.username = username;

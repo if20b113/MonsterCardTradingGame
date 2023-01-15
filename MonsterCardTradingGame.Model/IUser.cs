@@ -9,11 +9,13 @@ namespace MonsterCardTradingGame.Model
     public interface IUser
     {
         string Username { get; }
-
         string Password { get; }
-        Dictionary<string, object>? BattleResult { get; set; }
         ICard LastCard { get; }
         int CardCount { get; }
+
+        BatteLog PlayerBattleLog { get; set; }
+
+        const int coins = 20;
 
 
         void AddDeck(List<ICard> cards);
